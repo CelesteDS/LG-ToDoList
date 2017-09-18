@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const add = require('./commands/add.js');
+const list = require('./commands/list.js');
 var tdList = 'tasks.json';
 
 
@@ -14,10 +15,10 @@ switch (call) {
     add(tdList, userTask);
   //  console.log(JSON.stringify(fs.readFileSync(tdList, 'utf8'),'null','\t'));
     break;
-  /*case list:
-    list();
+  case 'list':
+    list(tdList);
     break;
-  case complete:
+  /*case complete:
     complete(userTask);
     break;
   case delete:
