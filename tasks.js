@@ -6,7 +6,7 @@ const list = require('./commands/list.js');
 var tdList = 'tasks.json';
 
 
-console.log(process.argv);
+// console.log(process.argv);
 var call = process.argv[2];
 var userTask = process.argv[3];
 

@@ -2,11 +2,12 @@ const fs = require('fs');
 
 const add = module.exports = function(tdList, addMe){
   if(!fs.existsSync(tdList)){
-    let start = JSON.stringify([{idCount:0}]);
+    let start = JSON.stringify([{idCount:1}]);
     fs.writeFileSync(tdList, start);
   }
   let hold = fs.readFileSync(tdList, 'utf8');
   const tasks = JSON.parse(hold);
+  console.log(typeof tasks);
   tasks.push({task:addMe, complete:false, id:tasks[0]['idCount']});
   tasks[0]['idCount']++;
 
