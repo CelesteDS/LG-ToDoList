@@ -1,9 +1,12 @@
 const fs = require('fs');
 
 const add = module.exports = function(tdList, addMe){
-  var hold = fs.readFileSync(tdList, 'utf8');
-  console.log(hold);
-  fs.writeFileSync(tdList,`${hold}{'task':${addMe},'complete':${false},'id':${0}},\n`);
+  let hold = fs.readFileSync(tdList, 'utf8');
+  const tasks = JSON.parse(hold);
+  tasks.push({task:addMe, complete:false, id:0});
+
+  console.log(tasks);
+  fs.writeFileSync(tdList,JSON.stringify(tasks));
 
 }
 

@@ -11,7 +11,7 @@ var userTask = process.argv[3];
 switch (call) {
   case 'add':
     add(tdList, userTask);
-    console.log(JSON.stringify(fs.readFileSync(tdList, 'utf8'),'null','\t'));
+  //  console.log(JSON.stringify(fs.readFileSync(tdList, 'utf8'),'null','\t'));
     break;
   /*case list:
     list();
