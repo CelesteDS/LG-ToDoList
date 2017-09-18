@@ -2,7 +2,8 @@
 
 const fs = require('fs');
 const add = require('./commands/add.js');
-var tdList = 'tasks.json'
+var tdList = 'tasks.json';
+
 
 console.log(process.argv);
 var call = process.argv[2];
