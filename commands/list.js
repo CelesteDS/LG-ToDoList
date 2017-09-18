@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const list = (tdList) => {
+  //if no tasks have yet been added, print appropriate message
   if(!fs.existsSync(tdList)){
     console.log("Nothing in your to do list yet! Use add to add an item.");
   }else{
