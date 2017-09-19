@@ -4,6 +4,7 @@ const fs = require('fs');
 const add = require('./commands/add.js');
 const list = require('./commands/list.js');
 const deleting = require('./commands/delete.js');
+const complete = require('./commands/complete.js');
 var tdList = 'tasks.json';
 
 
@@ -18,9 +19,9 @@ switch (call) {
   case 'list':
     list(tdList);
     break;
-  /*case complete:
-    complete(userTask);
-    break; */
+  case 'complete':
+    complete(tdList, userTask);
+    break;
   case 'delete':
     deleting(tdList, userTask);
     break;

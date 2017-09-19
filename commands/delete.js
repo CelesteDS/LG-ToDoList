@@ -10,7 +10,7 @@ const deleting = function(tdList, idNum){
       ind = i;
     }
   }
-  //
+  //with a legit list item id, remove that item from list
   if(ind>0){
     console.log(`Deleted task ${idNum}: ${tasks[ind]['task']}`);
     tasks.splice(ind, 1);
