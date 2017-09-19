@@ -19,7 +19,7 @@ const complete = function(tdList, idNum){
         console.log("That task has already been completed!");
       }
     }else{
-      console.log("No task with that number. Use list to see all tasks.")
+      console.log("Invalid number. Use list to see all tasks.")
     }
 
 

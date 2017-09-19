@@ -29,5 +29,3 @@ switch (call) {
     console.log("You can do the following [add, list, complete, delete]");
     break;
 }
-
-//console.log(add(['ab', 'cd', 'ef'], process.argv[2]));

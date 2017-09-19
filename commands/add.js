@@ -1,7 +1,8 @@
 const fs = require('fs');
 
 const add = module.exports = function(tdList, addMe){
-  if(!fs.existsSync(tdList)){
+  if(addMe != undefined){
+    if(!fs.existsSync(tdList)){
     let start = JSON.stringify([{idCount:1}]);
     fs.writeFileSync(tdList, start);
   }
@@ -11,6 +12,9 @@ const add = module.exports = function(tdList, addMe){
   console.log('Created task ' + tasks[0]['idCount']);
   tasks[0]['idCount']++;
   fs.writeFileSync(tdList,JSON.stringify(tasks));
+}else{
+  console.log("Describe a task to add it to the list");
+}
 
 }
 
