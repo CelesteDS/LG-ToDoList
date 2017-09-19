@@ -7,9 +7,15 @@ const list = (tdList) => {
   }else{
     console.log('ID Description\n-- -----------');
     let yrList = JSON.parse(fs.readFileSync(tdList, 'utf8'));
-    for(var i = 1; i < 3; i++){
+    if(yrList.length>1){
+    for(var i = 1; i < yrList.length; i++){
+      if(!yrList[i]['complete']){
        console.log(yrList[i]['id']+'  '+yrList[i]['task']);
+     }
     }
+  }else{
+    console.log("You have 0 tasks")
+  }
 
   }
 

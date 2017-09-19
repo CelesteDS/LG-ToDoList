@@ -3,6 +3,7 @@
 const fs = require('fs');
 const add = require('./commands/add.js');
 const list = require('./commands/list.js');
+const deleting = require('./commands/delete.js');
 var tdList = 'tasks.json';
 
 
@@ -13,17 +14,16 @@ var userTask = process.argv[3];
 switch (call) {
   case 'add':
     add(tdList, userTask);
-  //  console.log(JSON.stringify(fs.readFileSync(tdList, 'utf8'),'null','\t'));
     break;
   case 'list':
     list(tdList);
     break;
   /*case complete:
     complete(userTask);
+    break; */
+  case 'delete':
+    deleting(tdList, userTask);
     break;
-  case delete:
-    delete(userTask);
-    break;*/
   default:
     console.log("You can do the following [add, list, complete, delete]");
     break;

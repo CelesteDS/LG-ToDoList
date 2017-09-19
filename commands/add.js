@@ -7,11 +7,9 @@ const add = module.exports = function(tdList, addMe){
   }
   let hold = fs.readFileSync(tdList, 'utf8');
   const tasks = JSON.parse(hold);
-  console.log(typeof tasks);
   tasks.push({task:addMe, complete:false, id:tasks[0]['idCount']});
+  console.log('Created task ' + tasks[0]['idCount']);
   tasks[0]['idCount']++;
-
-  console.log(tasks);
   fs.writeFileSync(tdList,JSON.stringify(tasks));
 
 }
