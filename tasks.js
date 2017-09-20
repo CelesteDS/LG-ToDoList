@@ -1,31 +1,29 @@
-#!/usr/local/Cellar/node/8.4.0/bin/node
+#!/usr/bin/env node
+// ^this is the way to ensure node is found anywhere
 
-const fs = require('fs');
-const add = require('./commands/add.js');
-const list = require('./commands/list.js');
-const deleting = require('./commands/delete.js');
-const complete = require('./commands/complete.js');
-var tdList = 'tasks.json';
+const add = require('./commands/add.js')
+const list = require('./commands/list.js')
+const deleting = require('./commands/delete.js')
+const complete = require('./commands/complete.js')
+const tdList = 'tasks.json'
 
-
-// console.log(process.argv);
-var call = process.argv[2];
-var userTask = process.argv[3];
+var call = process.argv[2]
+var userTask = process.argv[3]
 
 switch (call) {
   case 'add':
-    add(tdList, userTask);
-    break;
+    add(tdList, userTask)
+    break
   case 'list':
-    list(tdList);
-    break;
+    list(tdList)
+    break
   case 'complete':
-    complete(tdList, userTask);
-    break;
+    complete(tdList, userTask)
+    break
   case 'delete':
-    deleting(tdList, userTask);
-    break;
+    deleting(tdList, userTask)
+    break
   default:
-    console.log("You can do the following [add, list, complete, delete]");
-    break;
+    console.log('You can do the following [add, list, complete, delete]')
+    break
 }
