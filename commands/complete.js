@@ -2,12 +2,12 @@ const fs = require('fs')
 /**
  * Adds a new task to the JSON task list
  * (creates the JSON file if it doesn't exist)
- * @param {string} tdList - the name of the file the tasks are in
+ * @param {string} todoList - the name of the file the tasks are in
  * @param {string} idNum - the id of task to complete
  */
-const complete = function (tdList, idNum) {
+const complete = function (todoList, idNum) {
     // grab the list
-    let tasks = JSON.parse(fs.readFileSync(tdList, 'utf8'))
+    let tasks = JSON.parse(fs.readFileSync(todoList, 'utf8'))
     // check to make sure they entered a id number from the list
     let ind = -1
     for (let i = 0; i < tasks.length; i++) {
@@ -19,7 +19,7 @@ const complete = function (tdList, idNum) {
         if (!tasks[ind].complete) {
             tasks[ind].complete = true
             console.log(`Completed task ${idNum}: ${tasks[ind].task}`)
-            fs.writeFileSync(tdList, JSON.stringify(tasks))
+            fs.writeFileSync(todoList, JSON.stringify(tasks))
         } else {
             console.log('That task has already been completed!')
         }

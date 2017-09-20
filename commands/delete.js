@@ -1,12 +1,12 @@
 const fs = require('fs')
 /**
  * Deletes a task from the task list by id number
- * @param {string} tdList - the name of the file the tasks are in
+ * @param {string} todoList - the name of the file the tasks are in
  * @param {string} idNum - the id of task to delete
  */
-const deleting = function (tdList, idNum) {
+const deleting = function (todoList, idNum) {
 // grab the list
-  let tasks = JSON.parse(fs.readFileSync(tdList, 'utf8'))
+  let tasks = JSON.parse(fs.readFileSync(todoList, 'utf8'))
 // check to make sure they entered a id number from the list
   let ind = -1
   for (let i = 0; i < tasks.length; i++) {
@@ -18,7 +18,7 @@ const deleting = function (tdList, idNum) {
   if (ind > 0) {
     console.log(`Deleted task ${idNum}: ${tasks[ind].task}`)
     tasks.splice(ind, 1)
-    fs.writeFileSync(tdList, JSON.stringify(tasks))
+    fs.writeFileSync(todoList, JSON.stringify(tasks))
   } else {
     console.log('Error: no task with that ID. Use list to see tasks.')
   }

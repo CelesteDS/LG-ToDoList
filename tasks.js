@@ -5,23 +5,23 @@ const add = require('./commands/add.js')
 const list = require('./commands/list.js')
 const deleting = require('./commands/delete.js')
 const complete = require('./commands/complete.js')
-const tdList = 'tasks.json'
+const todoList = 'tasks.json'
 
 var call = process.argv[2]
 var userTask = process.argv[3]
 
 switch (call) {
   case 'add':
-    add(tdList, userTask)
+    add(todoList, userTask)
     break
   case 'list':
-    list(tdList)
+    list(todoList)
     break
   case 'complete':
-    complete(tdList, userTask)
+    complete(todoList, userTask)
     break
   case 'delete':
-    deleting(tdList, userTask)
+    deleting(todoList, userTask)
     break
   default:
     console.log('You can do the following [add, list, complete, delete]')
