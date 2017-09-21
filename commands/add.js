@@ -7,7 +7,7 @@ const fs = require('fs')
 * @param {string} addMe - the task to add to the to do list
 */
 const add = function (todoList, addMe) {
-   if (addMe != undefined) { // in case someone doesn't enter a task
+  if (addMe !== undefined) { // in case someone doesn't enter a task
     if (!fs.existsSync(todoList)) {
       let start = JSON.stringify([{idCount: 1}], null, '\t')
       fs.writeFileSync(todoList, start)
@@ -19,7 +19,7 @@ const add = function (todoList, addMe) {
     tasks[0].idCount++
     fs.writeFileSync(todoList, JSON.stringify(tasks, null, '\t'))
   } else {
-    console.log('Describe a task to add it to the list')
+    console.log('Use format tasks.js add "Your task here"')
   }
 }
 

@@ -9,8 +9,8 @@ const deleting = function (todoList, idNum) {
   let tasks = JSON.parse(fs.readFileSync(todoList, 'utf8'))
 // check to make sure they entered a id number from the list
   let ind = -1
-  for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i].id == idNum) {
+  for (let i = 1; i < tasks.length; i++) {
+    if (tasks[i].id === Number(idNum)) {
       ind = i
     }
   }

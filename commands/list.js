@@ -10,9 +10,9 @@ const list = (todoList) => {
   if (fs.existsSync(todoList)) {
     let list = JSON.parse(fs.readFileSync(todoList, 'utf8'))
     if (list.length > 1) {
-      for (var i = 1; i < list.length; i++) {
+      for (let i = 1; i < list.length; i++) {
         if (!list[i].complete) {
-          tasks.includes('You have 0 tasks') ? tasks = '' : null
+          if (tasks.includes('You have 0 tasks')) tasks = ''
           tasks += `${list[i].id} ${list[i].task}\n`
         }
       }
