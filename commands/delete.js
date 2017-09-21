@@ -4,12 +4,12 @@ const fs = require('fs')
  * @param {string} todoList - the name of the file the tasks are in
  * @param {string} idNum - the id of task to delete
  */
-const deleting = function (todoList, idNum) {
-// grab the list
-  let tasks = JSON.parse(fs.readFileSync(todoList, 'utf8'))
-// check to make sure they entered a id number from the list
+const deleting = function deleting(todoList, idNum) {
+  // grab the list
+  const tasks = JSON.parse(fs.readFileSync(todoList, 'utf8'))
+  // check to make sure they entered a id number from the list
   let ind = -1
-  for (let i = 1; i < tasks.length; i++) {
+  for (let i = 1; i < tasks.length; i += 1) {
     if (tasks[i].id === Number(idNum)) {
       ind = i
     }
