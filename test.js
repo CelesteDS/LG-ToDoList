@@ -4,7 +4,6 @@ const add = require("./commands/add.js");
 const list = require("./commands/list.js");
 const delety = require("./commands/delete.js");
 const complete = require("./commands/complete.js");
-//const tasks = require("./tasks.js");
 const { exec } = require("child_process");
 const testArr = ['test1', 'test2', 'test3', 'test4'];
 const testFile = 'testTasks.json';
@@ -13,13 +12,17 @@ const fnToAr = function (filename) {
 }
 
 describe('add', () => {
-	it('should add the element to the end of the JSON obj', (done) => {
+	it('should create a new JSON file', (done) => {
 	    testArr.forEach(function(elem) {
 		add(testFile, elem);
 	    })
 	    expect(fs.existsSync('testTasks.json')).to.be.true;
 	    done();
          })
+	it('should put test1 into the JSON', (done) => {
+	  expect(fnToAr(testFile)[1].task).to.eql('test1');
+	  done();  
+	})
 })
 
 describe('complete', () => {
@@ -31,13 +34,19 @@ describe('complete', () => {
 })
 
 describe('delety', () => {
-	it('should delete the given task', () => {
+	it('should delete the given task', (done) => {
+	    delety(testFile, 3);
+	    expect(fnToAr(testFile)[3].task).to.eql('test4');
+	    done();
 
 	})
 })
 
 describe('list', function () {
+	let output = ''
+	list() > output;
 	it('should list the tasks', () => {
+	    console.log(`The output is ${output}`);
 	    it('shouldnt list the complete task', () => {
 	    })
 	    it('shouldnt list the deleted task', () => {
