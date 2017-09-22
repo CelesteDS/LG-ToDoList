@@ -5,12 +5,12 @@ const fs = require('fs')
  * @param {string} todoList - the name of the file the tasks are in
  * @param {string} idNum - the id of task to complete
  */
-const complete = function (todoList, idNum) {
-    // grab the list
-  let tasks = JSON.parse(fs.readFileSync(todoList, 'utf8'))
-    // check to make sure they entered a id number from the list
+const complete = function complete(todoList, idNum) {
+  // grab the list
+  const tasks = JSON.parse(fs.readFileSync(todoList, 'utf8'))
+  // check to make sure they entered a id number from the list
   let ind = -1
-  for (let i = 1; i < tasks.length; i++) {
+  for (let i = 1; i < tasks.length; i += 1) {
     if (tasks[i].id === Number(idNum)) {
       ind = i
     }

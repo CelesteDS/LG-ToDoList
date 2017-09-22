@@ -5,10 +5,11 @@ const add = require('./commands/add.js')
 const list = require('./commands/list.js')
 const deleting = require('./commands/delete.js')
 const complete = require('./commands/complete.js')
+
 const todoList = 'tasks.json'
 
-var call = process.argv[2]
-var userTask = process.argv[3]
+const call = process.argv[2]
+const userTask = process.argv[3]
 
 switch (call) {
   case 'add':
