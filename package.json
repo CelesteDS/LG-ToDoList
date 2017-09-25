@@ -13,6 +13,8 @@
   "author": "Celeste De Santiago",
   "license": "ISC",
   "devDependencies": {
+    // express and request ended up as dev dependencies here, but they're never used.
+
     "chai": "^4.1.2",
     "express": "^4.15.4",
     "mocha": "^3.5.3",
