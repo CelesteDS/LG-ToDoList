@@ -2,6 +2,7 @@ tasks.json
 node_modules
 testTasks.json
 testTasks2.json
+# bds: consider using a wildcard here (t*asks.json), instead of the three tasks lines
 
 #OS generated files #
 ######################
@@ -13,8 +14,3 @@ testTasks2.json
 ehthumbs.db
 Thumbs.db
 @turtledb
-
-
-
-
-
