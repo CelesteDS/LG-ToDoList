@@ -9,6 +9,9 @@ const complete = require('./commands/complete.js');
 const testArr = ['test1', 'test2', 'test3', 'test4'];
 const testFile = 'testTasks.json';
 const testFile2 = 'testTasks2.json'
+
+// bds: this could be used in your commands files as well!
+// bds: consider putting it in a helper file for all to use. ;-)
 const fnToAr = function fnToAr(filename) {
   return JSON.parse(fs.readFileSync(filename, 'utf8'))
 }
@@ -71,3 +74,11 @@ describe('list', function () {
     finish();
   })
 })
+
+// bds: consider what you *aren't* testing here.
+// bds: For example: running "list" when there are no items in the do-do list
+// bds: add a test for that. What else needs to be tested?
+
+// bds: also: re-run all these tests after you've refactored as suggested!
+// bds: you'll be able to tell whether or not it worked without having to test
+// bds: by hand! Woo hoo!
