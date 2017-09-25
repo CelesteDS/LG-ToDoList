@@ -10,6 +10,7 @@ const todoList = 'tasks.json'
 
 const call = process.argv[2]
 const userTask = process.argv[3]
+// bds: what if the task is more than one word, and not quoted?
 
 switch (call) {
   case 'add':
@@ -28,3 +29,4 @@ switch (call) {
     console.log('You can do the following [add, list, complete, delete]')
     break
 }
+// bds: this looks great -- nice and clean :-)
