@@ -6,11 +6,13 @@ const list = require('./commands/list.js')
 const deleting = require('./commands/delete.js')
 const complete = require('./commands/complete.js')
 
+// bds: nice to put todoList here, define in only one place, rather than in each file
 const todoList = 'tasks.json'
 
 const call = process.argv[2]
 const userTask = process.argv[3]
 // bds: what if the task is more than one word, and not quoted?
+// I know this isn't part of the spec, but you might want to think about it anyway
 
 switch (call) {
   case 'add':
