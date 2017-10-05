@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 // ^this is the way to ensure node is found anywhere
 
-const add = require('./commands/add.js')
-const list = require('./commands/list.js')
-const deleting = require('./commands/delete.js')
-const complete = require('./commands/complete.js')
+const addy = require('./commands/add.js')
+const listy = require('./commands/list.js')
+const deletey = require('./commands/delete.js')
+const completey = require('./commands/complete.js')
 
 const todoList = 'tasks.json'
 
